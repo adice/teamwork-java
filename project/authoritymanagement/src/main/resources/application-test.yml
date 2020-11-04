@@ -1,0 +1,38 @@
+server:
+  servlet:
+    context-path: /
+file:
+  upload:
+    path: D:/aitong/upload
+    relative:
+      path: /upload/**
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/authoritymanagement?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8&useSSL=false
+    username: root
+    password:
+    # 创建数据库  初始数据  由sql脚本创建：initialization-mode设置为always
+    # 也可以只初始化数据，则注释掉schema
+    # 若由实体Bean映射自动创建表，则initialization-mode设置为never
+    initialization-mode: never
+    data: classpath*:/db-import.sql
+  #    schema: classpath*:/db-schema.sql
+
+  jpa:
+    database: MySQL
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    hibernate:
+      # 若由实体Bean自动创建表，则ddl-auto设置为always，如果由脚本创建表，则设置为none
+      ddl-auto: update
+    show-sql: true
+    open-in-view: true
+
+  thymeleaf:
+    cache: false
+    check-template-location: true
+    servlet:
+      content-type: text/html
+    enabled: true
+    encoding: utf-8
