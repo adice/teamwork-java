@@ -2,17 +2,17 @@
 
 ## 1、确认CentOS版本
 
-## ![img](file:///C:/Users/PENGHU~1/AppData/Local/Temp/msohtmlclip1/01/clip_image002.png)
+## ![image-20201030140943498](CentOS配置JavaWeb环境.assets/image-20201030140943498.png)
 
 ## 2、下载系统版本对应的MySQL源
 
 https://dev.mysql.com/downloads/repo/yum/ 
 
-![img](file:///C:/Users/PENGHU~1/AppData/Local/Temp/msohtmlclip1/01/clip_image004.jpg)
+![image-20201030140954173](CentOS配置JavaWeb环境.assets/image-20201030140954173.png)
 
 ## 3、使用Xftp将加载文件上传至服务器的root目录
 
-![img](file:///C:/Users/PENGHU~1/AppData/Local/Temp/msohtmlclip1/01/clip_image006.jpg)
+![image-20201030141003157](CentOS配置JavaWeb环境.assets/image-20201030141003157.png)
 
 ## 4、安装MySQL源
 
@@ -20,7 +20,7 @@ https://dev.mysql.com/downloads/repo/yum/
 rpm -Uvh mysql80-community-release-el8-1.noarch.rpm 
 ```
 
-![img](file:///C:/Users/PENGHU~1/AppData/Local/Temp/msohtmlclip1/01/clip_image008.jpg)
+![image-20201030141015893](CentOS配置JavaWeb环境.assets/image-20201030141015893.png)
 
 安装完成后可以在
 
@@ -30,7 +30,7 @@ rpm -Uvh mysql80-community-release-el8-1.noarch.rpm
 
 目录下找到下面两个文件
 
-![img](file:///C:/Users/PENGHU~1/AppData/Local/Temp/msohtmlclip1/01/clip_image010.jpg)
+![image-20201030141025775](CentOS配置JavaWeb环境.assets/image-20201030141025775.png)
 
 ## 5、安装MySQL
 
@@ -40,11 +40,11 @@ yum install mysql-server
 
 输入y等待系统自动下载
 
-![img](file:///C:/Users/PENGHU~1/AppData/Local/Temp/msohtmlclip1/01/clip_image012.jpg)
+![image-20201030141033563](CentOS配置JavaWeb环境.assets/image-20201030141033563.png)
 
 安装完毕
 
-![img](file:///C:/Users/PENGHU~1/AppData/Local/Temp/msohtmlclip1/01/clip_image014.jpg)
+![image-20201030141040658](CentOS配置JavaWeb环境.assets/image-20201030141040658.png)
 
 ## 6、启动MySQL
 
@@ -62,7 +62,7 @@ mysql -uroot -p
 
 第一次登录无密码，直接回车
 
-![img](file:///C:/Users/PENGHU~1/AppData/Local/Temp/msohtmlclip1/01/clip_image016.jpg)
+![image-20201030141051188](CentOS配置JavaWeb环境.assets/image-20201030141051188.png)
 
 修改密码：
 
@@ -70,7 +70,7 @@ mysql -uroot -p
 alter user 'root'@'localhost' IDENTIFIED BY '123456';
 ```
 
-![img](file:///C:/Users/PENGHU~1/AppData/Local/Temp/msohtmlclip1/01/clip_image018.jpg)
+![image-20201030141059374](CentOS配置JavaWeb环境.assets/image-20201030141059374.png)
 
 立即刷新：
 
@@ -78,13 +78,13 @@ alter user 'root'@'localhost' IDENTIFIED BY '123456';
 FLUSH PRIVILEGES;
 ```
 
-![img](file:///C:/Users/PENGHU~1/AppData/Local/Temp/msohtmlclip1/01/clip_image019.png)
+![image-20201030141106036](CentOS配置JavaWeb环境.assets/image-20201030141106036.png)
 
 ## 8、测试密码是否修改成功
 
 先exit退出MySQL，再使用修改后的密码重新登录
 
-![img](file:///C:/Users/PENGHU~1/AppData/Local/Temp/msohtmlclip1/01/clip_image021.jpg)
+![image-20201030141113428](CentOS配置JavaWeb环境.assets/image-20201030141113428.png)
 
 ## 9、设置远程登录
 
@@ -114,7 +114,7 @@ ALTER USER 'mysql_user'@'%' IDENTIFIED WITH mysql_native_password BY 'xxx';
 flush privileges;
 ```
 
-![img](file:///C:/Users/PENGHU~1/AppData/Local/Temp/msohtmlclip1/01/clip_image023.jpg)
+![image-20201030141122409](CentOS配置JavaWeb环境.assets/image-20201030141122409.png)
 
 ## 10、确保3306端口开启
 
@@ -124,21 +124,21 @@ netstat -an | grep 3306
 
 LISTEN表示端口已经开启
 
-![img](file:///C:/Users/PENGHU~1/AppData/Local/Temp/msohtmlclip1/01/clip_image025.jpg)
+![image-20201030141129465](CentOS配置JavaWeb环境.assets/image-20201030141129465.png)
 
 如果没有开启，打开云服务器控制台配置安全组规则，添加3306端口，授权对象0.0.0.0/0
 
-![img](file:///C:/Users/PENGHU~1/AppData/Local/Temp/msohtmlclip1/01/clip_image027.jpg)
+![image-20201030141135768](CentOS配置JavaWeb环境.assets/image-20201030141135768.png)
 
 ## 11、使用Navicat远程连接数据库
 
 打开Navicat首页点击连接选择MySQL
 
-![img](file:///C:/Users/PENGHU~1/AppData/Local/Temp/msohtmlclip1/01/clip_image028.png)
+![image-20201030141143082](CentOS配置JavaWeb环境.assets/image-20201030141143082.png)
 
 登录
 
-![img](file:///C:/Users/PENGHU~1/AppData/Local/Temp/msohtmlclip1/01/clip_image029.png)
+![image-20201030141150859](CentOS配置JavaWeb环境.assets/image-20201030141150859.png)
 
 连接名随意，本地标识
 
@@ -148,7 +148,7 @@ LISTEN表示端口已经开启
 
 完成后点击测试连接
 
-![img](file:///C:/Users/PENGHU~1/AppData/Local/Temp/msohtmlclip1/01/clip_image030.png)
+![image-20201030141159056](CentOS配置JavaWeb环境.assets/image-20201030141159056.png)
 
 连接成功
 
@@ -164,7 +164,7 @@ LISTEN表示端口已经开启
 yum search java | grep jdk
 ```
 
-![img](file:///C:/Users/PENGHU~1/AppData/Local/Temp/msohtmlclip1/01/clip_image032.jpg)
+![image-20201030141209835](CentOS配置JavaWeb环境.assets/image-20201030141209835.png)
 
 ## 2、  安装对应版本JDK
 
@@ -174,11 +174,11 @@ yum search java | grep jdk
 yum install -y java-1.8.0-openjdk*
 ```
 
-![img](file:///C:/Users/PENGHU~1/AppData/Local/Temp/msohtmlclip1/01/clip_image034.jpg)
+![image-20201030141216401](CentOS配置JavaWeb环境.assets/image-20201030141216401.png)
 
 耐心等待……
 
-![img](file:///C:/Users/PENGHU~1/AppData/Local/Temp/msohtmlclip1/01/clip_image036.jpg)
+![image-20201030141223422](CentOS配置JavaWeb环境.assets/image-20201030141223422.png)
 
 安装完毕，测试是否安装成功：
 
@@ -186,7 +186,7 @@ yum install -y java-1.8.0-openjdk*
 java -version
 ```
 
-![img](file:///C:/Users/PENGHU~1/AppData/Local/Temp/msohtmlclip1/01/clip_image038.jpg)
+![image-20201030141230628](CentOS配置JavaWeb环境.assets/image-20201030141230628.png)
 
 ## 3、  配置环境变量
 
@@ -198,7 +198,7 @@ JDK默认安装路径
 
 复制最长的那个文件名（跟其他文件颜色不一样的那个）
 
-![img](file:///C:/Users/PENGHU~1/AppData/Local/Temp/msohtmlclip1/01/clip_image039.png)
+![image-20201030141240260](CentOS配置JavaWeb环境.assets/image-20201030141240260.png)
 
 使用vim打开配置文件：
 
@@ -206,7 +206,7 @@ JDK默认安装路径
 vim /etc/profile
 ```
 
-![img](file:///C:/Users/PENGHU~1/AppData/Local/Temp/msohtmlclip1/01/clip_image040.png)
+![image-20201030141253689](CentOS配置JavaWeb环境.assets/image-20201030141253689.png)
 
 在普通模式里面输入G跳转到文件最后
 
@@ -224,13 +224,13 @@ CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
 export JAVA_HOME CLASSPATH PATH
 ```
 
-![img](file:///C:/Users/PENGHU~1/AppData/Local/Temp/msohtmlclip1/01/clip_image042.jpg)
+![image-20201030141303727](CentOS配置JavaWeb环境.assets/image-20201030141303727.png)
 
 点击Esc进入普通模式
 
 输入:wq回车
 
-![img](file:///C:/Users/PENGHU~1/AppData/Local/Temp/msohtmlclip1/01/clip_image044.jpg)
+![image-20201030141312265](CentOS配置JavaWeb环境.assets/image-20201030141312265.png)
 
 刷新使配置的环境变量生效
 
@@ -238,7 +238,7 @@ export JAVA_HOME CLASSPATH PATH
 source /etc/profile
 ```
 
-![img](file:///C:/Users/PENGHU~1/AppData/Local/Temp/msohtmlclip1/01/clip_image045.png)
+![image-20201030141319205](CentOS配置JavaWeb环境.assets/image-20201030141319205.png)
 
 测试环境变量是否生效
 
@@ -250,7 +250,7 @@ echo $PATH
 echo $CLASSPATH
 ```
 
-![img](file:///C:/Users/PENGHU~1/AppData/Local/Temp/msohtmlclip1/01/clip_image047.jpg)
+![image-20201030141326177](CentOS配置JavaWeb环境.assets/image-20201030141326177.png)
 
 ## 4、  编写第一个HelloWord
 
@@ -262,7 +262,7 @@ vim HelloWord.java
 
 输入i进入编辑模式
 
-![img](file:///C:/Users/PENGHU~1/AppData/Local/Temp/msohtmlclip1/01/clip_image048.png)
+![image-20201030141333124](CentOS配置JavaWeb环境.assets/image-20201030141333124.png)
 
 保存退出
 
@@ -274,7 +274,7 @@ javac HelloWord.java
 
 编译生成字节码文件
 
-![img](file:///C:/Users/PENGHU~1/AppData/Local/Temp/msohtmlclip1/01/clip_image050.jpg)
+![image-20201030141339637](CentOS配置JavaWeb环境.assets/image-20201030141339637.png)
 
 执行
 
@@ -282,7 +282,7 @@ javac HelloWord.java
 java HelloWord
 ```
 
-![img](file:///C:/Users/PENGHU~1/AppData/Local/Temp/msohtmlclip1/01/clip_image052.jpg)
+![image-20201030141348382](CentOS配置JavaWeb环境.assets/image-20201030141348382.png)
 
 安装完毕
 
@@ -292,15 +292,15 @@ java HelloWord
 
 https://tomcat.apache.org/download-90.cgi
 
-![img](file:///C:/Users/PENGHU~1/AppData/Local/Temp/msohtmlclip1/01/clip_image054.jpg)
+![image-20201030141355790](CentOS配置JavaWeb环境.assets/image-20201030141355790.png)
 
 将安装压缩包使用Xftp上传到服务器
 
-![img](file:///C:/Users/PENGHU~1/AppData/Local/Temp/msohtmlclip1/01/clip_image056.jpg)
+![image-20201030141402952](CentOS配置JavaWeb环境.assets/image-20201030141402952.png)
 
 进入目录：
 
-![img](file:///C:/Users/PENGHU~1/AppData/Local/Temp/msohtmlclip1/01/clip_image058.jpg)
+![image-20201030141409718](CentOS配置JavaWeb环境.assets/image-20201030141409718.png)
 
 解压文件：
 
@@ -308,9 +308,9 @@ https://tomcat.apache.org/download-90.cgi
 tar -zxvf apache-tomcat-9.0.39.tar.gz
 ```
 
-![img](file:///C:/Users/PENGHU~1/AppData/Local/Temp/msohtmlclip1/01/clip_image060.jpg)
+![image-20201030141418402](CentOS配置JavaWeb环境.assets/image-20201030141418402.png)
 
-![img](file:///C:/Users/PENGHU~1/AppData/Local/Temp/msohtmlclip1/01/clip_image061.png)
+![image-20201030141424446](CentOS配置JavaWeb环境.assets/image-20201030141424446.png)
 
 ## 2、 配置tomcat环境变量
 
@@ -328,7 +328,7 @@ vim /etc/profile
 export CATALINA_HOME=/usr/local/tomcat/apache-tomcat-9.0.39
 ```
 
-![img](file:///C:/Users/PENGHU~1/AppData/Local/Temp/msohtmlclip1/01/clip_image063.jpg)
+![image-20201030141431668](CentOS配置JavaWeb环境.assets/image-20201030141431668.png)
 
 保存退出
 
@@ -344,7 +344,7 @@ source /etc/profile
 
 进入tomcat的bin目录
 
-![img](file:///C:/Users/PENGHU~1/AppData/Local/Temp/msohtmlclip1/01/clip_image065.jpg)
+![image-20201030141439279](CentOS配置JavaWeb环境.assets/image-20201030141439279.png)
 
 执行startup.sh
 
@@ -352,11 +352,11 @@ source /etc/profile
 ./startup.sh
 ```
 
-![img](file:///C:/Users/PENGHU~1/AppData/Local/Temp/msohtmlclip1/01/clip_image067.jpg)
+![image-20201030141445931](CentOS配置JavaWeb环境.assets/image-20201030141445931.png)
 
 启动成功，测试：
 
-![img](file:///C:/Users/PENGHU~1/AppData/Local/Temp/msohtmlclip1/01/clip_image069.jpg)
+![image-20201030141452630](CentOS配置JavaWeb环境.assets/image-20201030141452630.png)
 
 # 部署war工程
 
@@ -364,29 +364,29 @@ source /etc/profile
 
 插件市场直接搜索Alibaba Cloud Toolkit，重启IDEA
 
-![img](file:///C:/Users/PENGHU~1/AppData/Local/Temp/msohtmlclip1/01/clip_image071.jpg)
+![image-20201030141500414](CentOS配置JavaWeb环境.assets/image-20201030141500414.png)
 
 ## 2、  完善相关配置
 
 打开设置：
 
-![img](file:///C:/Users/PENGHU~1/AppData/Local/Temp/msohtmlclip1/01/clip_image073.jpg)
+![image-20201030141508928](CentOS配置JavaWeb环境.assets/image-20201030141508928.png)
 
 进入阿里服务器后台AccessKey管理
 
-![img](file:///C:/Users/PENGHU~1/AppData/Local/Temp/msohtmlclip1/01/clip_image075.jpg)
+![image-20201030141515231](CentOS配置JavaWeb环境.assets/image-20201030141515231.png)
 
 将对应字段填入IDEA中，并点击OK
 
-![img](file:///C:/Users/PENGHU~1/AppData/Local/Temp/msohtmlclip1/01/clip_image077.jpg)
+![image-20201030141521429](CentOS配置JavaWeb环境.assets/image-20201030141521429.png)
 
 使用工具配置主机
 
-![img](file:///C:/Users/PENGHU~1/AppData/Local/Temp/msohtmlclip1/01/clip_image079.jpg)
+![image-20201030141528256](CentOS配置JavaWeb环境.assets/image-20201030141528256.png)
 
 如图，如果前面key配置成功这里就会自动识别到云主机
 
-![img](file:///C:/Users/PENGHU~1/AppData/Local/Temp/msohtmlclip1/01/clip_image081.jpg)
+![image-20201030141536972](CentOS配置JavaWeb环境.assets/image-20201030141536972.png)
 
 Target Directory填写tomcat站点webapps目录下
 
@@ -416,7 +416,7 @@ rm -rf /usr/local/tomcat/apache-tomcat-9.0.39/webapps/javademo
 sh /usr/local/tomcat/apache-tomcat-9.0.39/bin/startup.sh
 ```
 
-![img](file:///C:/Users/PENGHU~1/AppData/Local/Temp/msohtmlclip1/01/clip_image083.jpg)
+![image-20201030141548169](CentOS配置JavaWeb环境.assets/image-20201030141548169.png)
 
 保存退出
 
@@ -432,7 +432,7 @@ if [ -f ~/.bashrc ]; then
 fi
 ```
 
-![img](file:///C:/Users/PENGHU~1/AppData/Local/Temp/msohtmlclip1/01/clip_image085.jpg)
+![image-20201030141556541](CentOS配置JavaWeb环境.assets/image-20201030141556541.png)
 
 保存退出
 
@@ -442,22 +442,22 @@ fi
 
 注意修改账户名密码，
 
-![img](file:///C:/Users/PENGHU~1/AppData/Local/Temp/msohtmlclip1/01/clip_image087.jpg)
+![image-20201030141602121](CentOS配置JavaWeb环境.assets/image-20201030141602121.png)
 
  
 
 选中主机并选择让项目部署的时候先clean以下，然后run
 
-![img](file:///C:/Users/PENGHU~1/AppData/Local/Temp/msohtmlclip1/01/clip_image089.jpg)
+![image-20201030141607837](CentOS配置JavaWeb环境.assets/image-20201030141607837.png)
 
 部署完成，控制台显示：
 
-![img](file:///C:/Users/PENGHU~1/AppData/Local/Temp/msohtmlclip1/01/clip_image091.jpg)
+![image-20201030141615468](CentOS配置JavaWeb环境.assets/image-20201030141615468.png)
 
 ## 4、  测试
 
-![img](file:///C:/Users/PENGHU~1/AppData/Local/Temp/msohtmlclip1/01/clip_image093.jpg)
+![image-20201030141624689](CentOS配置JavaWeb环境.assets/image-20201030141624689.png)
 
-![img](file:///C:/Users/PENGHU~1/AppData/Local/Temp/msohtmlclip1/01/clip_image095.jpg)
+![image-20201030141630954](CentOS配置JavaWeb环境.assets/image-20201030141630954.png)
 
 大功告成！！！
